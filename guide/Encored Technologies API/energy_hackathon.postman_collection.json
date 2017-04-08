@@ -1,0 +1,343 @@
+{
+	"variables": [],
+	"info": {
+		"name": "에너지 해커톤 2017",
+		"_postman_id": "73de590f-fc20-d9b2-7508-2a8840570f72",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "서울대 사이트 목록",
+			"request": {
+				"url": "{{api_url}}/sites",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "개별 사이트 태그 목록",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/sites/:siteId/tags",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"sites",
+						":siteId",
+						"tags"
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "[실시간 사용량] 사이트",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/sites/:siteId/usages/realtime",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"sites",
+						":siteId",
+						"usages",
+						"realtime"
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "[실시간 사용량] 태그",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/sites/:siteId/tags/:tagId/usages/realtime",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"sites",
+						":siteId",
+						"tags",
+						":tagId",
+						"usages",
+						"realtime"
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						},
+						{
+							"value": "20315",
+							"id": "tagId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "[기간별 사용량] 사이트",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/sites/:siteId/usages/periodic?start=1477926000000&end=1490972400000&period=month",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"sites",
+						":siteId",
+						"usages",
+						"periodic"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1477926000000"
+						},
+						{
+							"key": "end",
+							"value": "1490972400000"
+						},
+						{
+							"key": "period",
+							"value": "month"
+						}
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "[기간별 사용량] 태그",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/sites/:siteId/tags/:tagId/usages/periodic?start=1477926000000&end=1490972400000&period=month",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"sites",
+						":siteId",
+						"tags",
+						":tagId",
+						"usages",
+						"periodic"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1477926000000"
+						},
+						{
+							"key": "end",
+							"value": "1490972400000"
+						},
+						{
+							"key": "period",
+							"value": "month"
+						}
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						},
+						{
+							"value": "20315",
+							"id": "tagId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "[예측 사용량] 사이트 피크",
+			"request": {
+				"url": {
+					"raw": "{{api_url}}/1.1/buildings/:siteId/baselines?start=1491490800000&end=1491577200000",
+					"auth": {},
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"1.1",
+						"buildings",
+						":siteId",
+						"baselines"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1491490800000"
+						},
+						{
+							"key": "end",
+							"value": "1491577200000"
+						}
+					],
+					"variable": [
+						{
+							"value": "{{site3}}",
+							"id": "siteId"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
